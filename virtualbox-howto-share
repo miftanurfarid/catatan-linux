@@ -1,0 +1,16 @@
+# How to share files in virtualbox with vista guest and ubuntu host
+
+1. In your Ubuntu machine, open up Virtualbox (Applications -> System Tools -> virtualBox).
+2. Highlight the Vista VM entry (make sure that it is in Powered off state) and click on the Settings icon at the top.
+3. On the left, click on the Network. On the right, make sure that the Enable Network Adaptor and Cable Connected are checked.
+4. On the left, click on the Shared Folders. Then, click on the 'virtualbox add share folder' icon on the far right.
+5. Select the folder that you want to use as a share point. Give it a name. For example: folder path:/home/damien/share, folder name: share
+6. Click OK to close the Settings window.
+7. Boot up your Vista VM.
+8. Install the guest addition. (Skip this step if you have already done so). Devices, Install Guest Additions.
+9. Restart the Vista VM
+10. Open your Windows Explorer, click on the Map Network Drive
+11. In the Folder input text, enter: '\\vboxsvr\sharename'. where sharename is the name of the share folder that you add just now. Make sure that the Reconnect at logon is checked.
+12. Click Finish
+
+You should now see the shared folder mounted as a network drive. That’s it.
