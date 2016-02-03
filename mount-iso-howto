@@ -1,0 +1,2 @@
+mkdir /media/iso
+sudo mount -o loop /your/iso/file.iso /media/iso
