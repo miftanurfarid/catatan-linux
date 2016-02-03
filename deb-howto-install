@@ -1,0 +1,11 @@
+## Untuk instalasi .deb
+
+# Sebenarnya cara instal file .deb di Linux ada beberapa cara. Yang pertama dengan double click/Open. Akan tetapi cara ini biasanya sering eror maka jika eror silahkan menggunakan cara yang lain.
+# Cara yang lain yaitu melalui terminal :
+# Buka Terminal
+# Letakkan file di folder Document
+
+sudo dpkg -i namafile.deb
+
+# masukkan password root
+# tunggu loading/proses hingga selesai.
