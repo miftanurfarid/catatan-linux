@@ -1,0 +1,11 @@
+#buka file /etc/wgetrc
+gedit /etc/wgetrc
+
+#copas ini: (tanpa tanda #)
+#https_proxy = http://mifta09%40mhs.ep.its.ac.id:123456qwerty@proxy.its.ac.id:8080/
+#http_proxy = http://mifta09%40mhs.ep.its.ac.id:123456qwerty@proxy.its.ac.id:8080/
+#ftp_proxy = http://mifta09%40mhs.ep.its.ac.id:123456qwerty@proxy.its.ac.id:8080/
+#pada tab proxy
+
+#(hilangkan tanda # pada use_proxy)
+#use_proxy = on
