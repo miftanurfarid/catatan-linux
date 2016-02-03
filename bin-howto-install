@@ -1,0 +1,23 @@
+## Untuk instalasi .bin
+
+# Buka terminal
+# Menuju ke lokasi dimana file .bin tersebut berada dengan perintah
+
+cd nama-folder
+
+#Rubah atribut file tersebut untuk bisa dieksekusi,
+
+chmod +x file.bin 
+
+#Misal:
+
+chmod +x GoogleEarthLinux.bin
+
+#Eksekusi dengan perintah
+
+./file.bin
+
+#Misal :
+./GoogleEarthLinux.bin
+
+#Maka setelah menekan tombol “Enter” proses installasinya akan berjalan.
