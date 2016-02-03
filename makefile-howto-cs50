@@ -1,0 +1,9 @@
+thout a makefile, Make takes its cues from environment variables set in your shell (specifically, those loaded in /etc/profile.d/appliance50.sh).
+
+To get the same behavior from Make as it has in the CS50 Appliance, you can add the following to your .bashrc (or .zshrc, etc, if you're using a different shell):
+
+export CC=clang  
+export CFLAGS="-ggdb3 -O0 -std=c99 -Wall -Werror"
+export LDLIBS="-lcs50 -lm"
+
+(Note that we're using clang, not gcc, in CS50.)
