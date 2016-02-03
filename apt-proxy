@@ -1,0 +1,8 @@
+Acquire::http::proxy "http://mifta09@mhs.ep.its.ac.id:123456qwerty@proxy.its.ac.id:8080/";
+Acquire::https::proxy "https://mifta09@mhs.ep.its.ac.id:123456qwerty@proxy.its.ac.id:8080/";
+Acquire::ftp::proxy "ftp://mifta09@mhs.ep.its.ac.id:123456qwerty@proxy.its.ac.id:8080/";
+Acquire::socks::proxy "socks://mifta09@mhs.ep.its.ac.id:123456qwerty@proxy.its.ac.id:8080/";
+Acquire::http::proxy "http://tu_tfisika@its.ac.id:jos@proxy2.its.ac.id:8080/";
+Acquire::https::proxy "https://tu_tfisika@its.ac.id:jos@proxy2.its.ac.id:8080/";
+Acquire::ftp::proxy "ftp://tu_tfisika@its.ac.id:jos@proxy2.its.ac.id:8080/";
+Acquire::socks::proxy "socks://tu_tfisika@its.ac.id:jos@proxy2.its.ac.id:8080/";
