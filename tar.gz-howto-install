@@ -1,0 +1,20 @@
+# Kalau mau instal file tar.gz, ekstrak terlebih dulu file tersebut. Bisa lewat file manager (Konqueror atau Nautilus). Klik kanan pilih extract here. Atau lewat terminal konsole
+
+tar xzvf nama file.tar.gz
+
+# Terus masuk ke direktori tempat file hasil ekstrak kemudian baca file README atau INSTALL file tersebut sebagai petunjuk utama instalasi file.
+# Tapi secara umum, sebagian besar instalasi paket tarbal (tar.gz atau tar.bz2) bisa melalui langkah-langkah berikut (lewat terminal)
+
+cd folder ekstrak
+
+./configure
+
+# pastikan saat ini tidak ada masalah. Jika ada paket-paket lain yg harus diinstall, install terlebih dulu paket-paket yg dibutuhkan.
+# Lalu lakukan kompilasi
+
+make
+
+# Lalu install (sebagai root)
+
+su
+make install
