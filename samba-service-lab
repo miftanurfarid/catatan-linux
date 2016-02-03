@@ -1,0 +1,4 @@
+testparm
+
+sudo service smbd restart
+sudo service nmbd restart
