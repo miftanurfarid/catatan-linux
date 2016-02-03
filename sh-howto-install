@@ -1,0 +1,10 @@
+## Untuk install .sh
+
+# Buka Terminal
+
+# Letakkan file .sh di folder Document
+
+cd /Document
+sh namafile.sh
+
+# Tunggu proses instalasi file, selesai
