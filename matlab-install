@@ -1,0 +1,3 @@
+# setelah install matlab, install matlab-support utk membuat shortcut ke local installation
+
+sudo apt-get install matlab-support
