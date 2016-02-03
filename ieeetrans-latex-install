@@ -1,0 +1,10 @@
+## Installing ieeetrans and the ieee bibtex style for latex in ubuntu
+
+sudo apt-get install texlive-publishers texlive-publishers-doc
+
+# download the IEEEtran.zip archive from http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+
+# then create a folder latex in /usr/share/texmf-texlive
+# now, create a folder IEEE in /usr/share/texmf-texlive/latex
+# copy the content of the archive IEEEtran.zip into /usr/share/texmf-texlive/latex/IEEE
+# run sudo texhash to let latex know that there are new files installed.
