@@ -1,0 +1,11 @@
+## How can I run this sh script without typing the full path?
+
+#You can just create symlink. Create it in /usr/local/bin. All you need is to run command:
+
+sudo ln -s /full/path/to/your/file /usr/local/bin/name_of_new_command
+
+#After that you should make your file executable:
+
+chmod +x /full/path/to/your/file
+
+Now you should be able to run name_of_new_command at any time in your terminal. Note that this is good solution only for home usage of Linux.
