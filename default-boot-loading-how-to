@@ -1,0 +1,4 @@
+sudo update-alternatives --config default.plymouth
+for default -> /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.plymouth
+sudo update-initramfs -u
+sudo dpkg-reconfigure lightdm // for the login screen
