@@ -1,6 +1,4 @@
-export http_proxy="http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080/"
-export https_proxy="http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080/"
-export ftp_proxy="http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080/"
-export socks_proxy="http://tu_tfisika0its.ac.id:jos@proxy2.its.ac.id:8080/"
-
-
+export http_proxy=http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080
+export https_proxy=http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080
+export ftp_proxy=http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080
+export socks_proxy=http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080

@@ -1,0 +1,6 @@
+1. sudo apt-get install texlive-publishers texlive-publishers-doc
+2. download the IEEEtran.zip archive from http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+3. then create a folder latex in /usr/share/texmf-texlive
+4. now, create a folder IEEE in /usr/share/texmf-texlive/latex
+5. copy the content of the archive IEEEtran.zip into /usr/share/texmf-texlive/latex/IEEE
+6. run sudo texhash to let latex know that there are new files installed.
