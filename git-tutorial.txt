@@ -1,5 +1,6 @@
+==================================================================================
 ## How to Install and Configure Git & Repositorys on GitHub (Video 1)
-
+==================================================================================
 sudo apt-get install git
 
 #go to github.com
@@ -21,7 +22,9 @@ cd test
 git init
 git remote add origin https://github.com/miftanurfarid/test.git
 
+==================================================================================
 ## How to Command and Use GIT (Video 2)
+==================================================================================
 
 #in test folder, we will create a file
 
@@ -98,15 +101,16 @@ git add .
 git commit -m 'added newfile'
 git push origin master
 
-#username and password, if you user SSH, you dont have to use username and password
+#username and password, if you user SSH, you dont have to use username & password
 #go to github.com to see changes that you made
 
 #in your machine
 
 git pull origin master
 
+==================================================================================
 ## How to use Git on Linux (video 3)
-
+==================================================================================
 sudo apt-get install git
 git config --global user.name "miftanurfarid"
 git config --global user.email "miftanurfarid@gmail.com"
@@ -127,8 +131,9 @@ git add .
 git commit -m 'second commit, changed README and add test'
 git push
 
-
+==================================================================================
 ## Git tutor from github
+==================================================================================
 echo "# gittest" >> README.md
 git init
 git add README.md
@@ -138,3 +143,44 @@ git push -u origin master
 
 git remote add origin git@github.com:miftanurfarid/gittest.git
 git push -u origin master
+
+==================================================================================
+## UNTUK MENGHAPUS REMOTE REPOSITORY YANG TELAH DI ENTER
+==================================================================================
+git remote rm origin
+
+==================================================================================
+## GETTING GIT TO WORK WITH A PROXY SERVER
+==================================================================================
+
+
+Command to use :
+
+git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+
+    change proxyuser to your proxy user
+    change proxypwd to your proxy password
+    change proxy.server.com to the URL of your proxy server
+    change 8080 to the proxy port configured on your proxy server
+
+If you decide at any time to reset this proxy and work without (no proxy):
+
+Commands to use:
+
+git config --global --unset http.proxy
+
+Finally, to check the currently set proxy;
+
+git config --global --get http.proxy
+
+==================================================================================
+## How can I delete a file from git repo?
+==================================================================================
+
+git rm file1.txt
+git commit -m "remove file1.txt"
+
+But if you want to remove the file only from the Git repository and not remove it from the filesystem, use:
+
+git rm --cached file1.txt
+
