@@ -156,7 +156,7 @@ git remote rm origin
 
 Command to use :
 
-git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+git config --global http.proxy http://tu_tfisika%40its.ac.id:jos@proxy2.its.ac.id:8080
 
     change proxyuser to your proxy user
     change proxypwd to your proxy password
