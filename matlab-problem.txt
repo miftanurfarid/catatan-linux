@@ -1,0 +1,9 @@
+ketika proses instalasi MATLAB gagal kemudian muncul error seperti berikut:
+
+exception in thread main com.google.inject
+
+solusinya adalah:
+
+>> cd bin/glnxa64
+>> rm libstdc++.so.6
+>> ln -s libstdc++.so.6.0.13 libstdc++.so.6
