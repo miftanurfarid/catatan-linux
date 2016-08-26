@@ -1,2 +1,2 @@
-mkdir /media/iso
+cd hmkdir /media/iso
 sudo mount -o loop /your/iso/file.iso /media/iso
