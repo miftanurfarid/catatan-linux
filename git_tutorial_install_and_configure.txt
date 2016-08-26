@@ -1,0 +1,146 @@
+========================================================================================
+## How to Install and Configure Git & Repositorys on GitHub (Video 1)
+========================================================================================
+sudo apt-get install git
+
+#go to github.com
+#create account
+
+git config --global user.name "miftanurfarid"
+git config --global user.email "miftanurfarid@gmail.com"
+
+#go to github.com
+#click create a new repository
+#name it: test
+#description: Git test for ubuntu 12.04
+#click create repository
+
+ls
+mkdir test
+ls
+cd test
+git init
+git remote add origin https://github.com/miftanurfarid/test.git
+
+========================================================================================
+## How to Command and Use GIT (Video 2)
+========================================================================================
+
+#in test folder, we will create a file
+
+gedit README
+
+#This is a README
+#save
+
+git add README (for add file README
+git add . (for add all file in current folder)
+git commit -m 'First Commit'
+git push origin master
+
+#enter your username & password
+
+#go to github.com
+#you can see the First Commit, click First Commit, green line that we just add
+
+gedit password
+
+#This is a password
+#save
+
+gedit README
+
+#This is not a README
+#
+#I have added this line
+#save
+
+git add .
+git commit -m 'Second Commit - added password and changed README'
+git push origin master
+
+#go to github.com
+#you can see the Second Commit
+
+#make changes to the commit
+
+gedit password
+
+#This is a
+#save
+
+git add .
+git commit -m 'new commit'
+
+#if we dont want that commit but want to keep that password file
+
+git reset --soft HEAD^
+
+#this remove our commit, but keep our password file
+
+git add .
+git commit -m 'new commit'
+
+#if we dont want this commit and want to reverse back password file
+
+git reset --hard HEAD^
+
+#git in another machine
+
+git clone https://github.com/miftanurfarid/test.git
+cd test
+
+#make a change on this machine
+
+gedit newfile
+
+#THis is a new file
+#save
+
+git add .
+git commit -m 'added newfile'
+git push origin master
+
+#username and password, if you user SSH, you dont have to use username & password
+#go to github.com to see changes that you made
+
+#in your machine
+
+git pull origin master
+
+========================================================================================
+## How to use Git on Linux (video 3)
+========================================================================================
+sudo apt-get install git
+git config --global user.name "miftanurfarid"
+git config --global user.email "miftanurfarid@gmail.com"
+
+#make repository on github.com
+cd ~ #go to home folder
+mkdir gittest #same as repo
+git init
+gedit README #Testing out github #save
+git add .
+git commit -m 'first commit' #m for message
+git remote add origin https://github.com/miftanurfarid/gittest.git
+git push origin master #use master branch
+
+gedit README #make changes
+gedit test #make changes
+git add .
+git commit -m 'second commit, changed README and add test'
+git push
+
+========================================================================================
+## Git tutor from github
+========================================================================================
+echo "# gittest" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:miftanurfarid/gittest.git
+git push -u origin master
+
+git remote add origin git@github.com:miftanurfarid/gittest.git
+git push -u origin master
+
