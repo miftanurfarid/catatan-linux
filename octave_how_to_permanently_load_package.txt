@@ -1,0 +1,4 @@
+vim ~/.octaverc
+
+didalamnya isi:
+pkg load <nama paket>
