@@ -1,9 +1,12 @@
 private server
 123456QwErTy#!
+44353209 <-- ini pass default
 
 admin
 60k1LZ!@#*
 
+152303104477
+ZXXHXF12PW
 
 hp dio: ac:c1:ee:36:8f:25
 hp farid: 40:c6:2a:33:80:bd
@@ -11,3 +14,11 @@ laptop farid: 74:2f:68:b9:f6:65
 hp danar: c4:f0:81:42:ec:4f
 laptop dio: 34:23:87:a7:e7:0b
 laptop danar: 90:4c:e5:2d:57:6c
+laptop reyhan 68:F7:28:00:51:8E (Lcfc(hefei) Electronics Technology) -> lenovo product
+charger dio 28:6C:07:71:1F:21 (Unknown) -> china product
+
+IP MALING
+?? D8:16:C1:11:49:9C (Unknown)
+?? 38:A4:ED:13:C4:94 (Unknown)
+?? 18:3A:2D:9B:B0:A4 (Samsung Electronics)
+?? 74:E5:43:5C:27:3A (Liteon Technology)

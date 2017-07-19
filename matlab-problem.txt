@@ -7,3 +7,14 @@ solusinya adalah:
 >> cd bin/glnxa64
 >> rm libstdc++.so.6
 >> ln -s libstdc++.so.6.0.13 libstdc++.so.6
+
+############################################################################
+
+libGL error: unable to load driver: r600_dri.so
+
+solusi:
+If this situation occurs, rename the file found at " $MATLAB_ROOT$/sys/os/glnxa64/libstdc++.so.6" to "libstdc++.so.6.old", restart MATLAB, this forces MATLAB to use the OS library.
+
+Where,
+
+$MATLABROOT can be found out by typing in the command "matlabroot" in your MATLAB Command Window.

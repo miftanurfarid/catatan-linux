@@ -1,3 +1,56 @@
 # setelah install matlab, install matlab-support utk membuat shortcut ke local installation
 
 sudo apt-get install matlab-support
+
+
+###########################################################################################################################
+
+
+The powerful scientific computing tool, Matlab (Matrix Laboratory) from Mathworks is certainly a widely used tool in the scientific world. While Mathworks does provide good Windows, Linux, *nix, Mac OS X support for Matlab out-of-the-box, one overlooked aspect is the integration of Matlab to the Unity launcher used in Ubuntu. 
+
+Most users will find the installation process itself smooth across all platforms (kudos to Mathworks), however, the Ubuntu user will quickly after the installation wonder how on earth they are supposed to launch Matlab, as it does not show up on the Unity launcher bar and does not show up either when searching for it through the Unity lenses. While it is of course possible to use the terminal to launch Matlab through, for example, 
+
+    $ matlab -desktop
+
+    $ /usr/local/MATLAB/R201Xa/bin/matlab
+
+
+this approach is certainly not optimal, and most definitely rhymes badly with the user-friendliness of Ubuntu. Fortunately, integrating Matlab with Unity in Ubuntu can be made relatively easy by following these steps:
+
+    Make sure that the Matlab binary already has a symbolic link in your default path by typing the following into a terminal:
+
+    $ sudo ln -s usr/local/MATLAB/R201Xa/bin/matlab /usr/local/bin/matlab
+
+    obviously by replacing the capital X in "R201Xa" with the proper path.
+
+    Make Unity launcher in Ubuntu aware of Matlab by creating the hard link:
+
+    $ sudo ln /usr/share/app-install/desktop/matlab-support:matlab.desktop /usr/share/applications/matlab.desktop
+
+    Edit the /usr/share/app-install/desktop/matlab-support:matlab.desktop file with your favourite text editor which will show:
+
+    [Desktop Entry]
+    X-AppInstall-Package=matlab-support
+    X-AppInstall-Popcon=3
+    X-AppInstall-Section=multiverse
+
+    Version=1.0
+    Type=Application
+    Terminal=false
+    Exec=matlab -desktop
+    Name=MATLAB
+    Icon=_usr_share_icons_hicolor_48x48_apps_matlab
+    Categories=Development;Math;Science
+    Comment=Scientific computing environment
+    StartupNotify=true
+    StartupWMClass=com-mathworks-util-PostVMInit
+
+    X-Ubuntu-Gettext-Domain=app-install-data
+
+    Change the following (marked in red above) two lines to be:
+
+    Terminal=true
+    Icon=/usr/share/app-install/icons/_usr_share_icons_hicolor_48x48_apps_matlab.png
+
+
+After saving the above file, Matlab will be fully integrated and appear in the Unity launcher. Thus, it is possible to use the lenses to find the installed Matlab application (Meta/Windows-key+A) and also to lock the Matlab icon to the launcher by right clicking on it when it is running. Of course, it is also still possible to launch Matlab from the terminal and then lock it to the launcher if one so wishes!

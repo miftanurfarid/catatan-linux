@@ -1,0 +1,30 @@
+
+    Download both 32bit and 64bit Ubuntu ISOs. (Tested with Ubuntu 15.10)
+
+    Download a multi-arch Debian ISO. (Tested with Debian 8.2.0 netinst ISO)
+
+    Format your USB disk as FAT and mount it
+        In Gnome Disks, select the USB drive in the left list, go to the "Hamburger Menu" in the upper-right corner, choose Format Disk, select MSR/DOS partitioning, and Format. Then click '+' and accept defaults which should create a FAT partition. Finally, click the "play" triangle to mount it.
+    Extract installation files from the Ubuntu 32-bit ISO while copying the contents of the symlinks
+        In Gnome Disks, open the Disks menu (up where File and Edit normally are), choose Attach Disk Image, select ubuntu-15.10-desktop-i386.iso, and mount the biggest partition.
+        In Terminal, rsync -rL --exclude=/ubuntu <path to Ubuntu 32-bit install disk>/ <path to usb disk>/
+            Replace <placeholders> with the correct paths
+            Don't forget the slash at the end of the source path
+    Copy /boot and /EFI directories from an Ubuntu 64-bit ISO
+        Mount the iso
+        rsync -r <path to Ubuntu 64-bit install disk>/boot/ <path to usb disk>/boot/
+        rsync -r <path to Ubuntu 64-bit install disk>/EFI/ <path to usb disk>/EFI/
+            Again, the slashes at the end are significant
+    Copy 32-bit GRUB from a Debian multi-arch ISO
+        Mount the iso
+        cp <path to Debian multi-arch install disk>/efi/boot/bootia32.efi <path to usb disk>/EFI/BOOT/
+        rsync -r <path to Debian multi-arch install disk>/boot/grub/i386-efi <path to usb disk>/boot/grub/
+            Watch those slashes (this time the source doesn't end in a slash)
+    Rename vmlinuz to vmlinuz.efi
+        mv <path to usb disk>/casper/vmlinuz <path to usb disk>/casper/vmlinuz.efi
+    Unmount everything
+    Disable Secure Boot on target system and boot from the USB drive.
+    Install Ubuntu! (I've tested with "Erase disk and encrypt it with LVM" option and the install works automatically--unless the kernel doesn't support the flash chips in the device.)
+    System should be "ready." It will boot, but actually it may not be very functional due to lack of drivers (as of Ubuntu 16.04). Check out this Google+ group for more advice and latest patched kernels.
+
+    
