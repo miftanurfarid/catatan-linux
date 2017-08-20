@@ -1,0 +1,8 @@
+﻿MEvent. Case! When Two-Finger Scrolling
+
+sudo vim /usr/local/MATLAB/R2017a/toolbox/local/matlabrc.m 
+
+tambahkan:
+
+!synclient HorizEdgeScroll=0
+!synclient HorizTwoFingerScroll=0
