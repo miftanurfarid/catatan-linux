@@ -1,0 +1,42 @@
+octave dengan openblas:
+
+download & extract octave:
+	wget https://ftp.gnu.org/gnu/octave/octave-4.2.0.tar.gz
+	tar -xvf octave-4.2.0.tar.gz
+
+Install dependencies:
+	sudo apt-get install gcc g++ gfortran make libblas-dev liblapack-dev libpcre3-dev libarpack2-dev libcurl4-gnutls-dev epstool libfftw3-dev transfig libfltk1.3-dev libfontconfig1-dev libfreetype6-dev libgl2ps-dev libglpk-dev libreadline-dev gnuplot-x11 libgraphicsmagick++1-dev libhdf5-serial-dev openjdk-8-jdk libsndfile1-dev llvm-dev lpr texinfo libgl1-mesa-dev libosmesa6-dev pstoedit portaudio19-dev libqhull-dev libqrupdate-dev libqscintilla2-dev libqt4-dev libqtcore4 libqtwebkit4 libqt4-network libqtgui4 libqt4-opengl-dev libsuitesparse-dev texlive libxft-dev zlib1g-dev autoconf automake bison flex gperf gzip icoutils librsvg2-bin libtool perl rsync tar libopenblas-base
+
+	wget https://github.com/xianyi/OpenBLAS/archive/v0.2.20.zip
+	unzip v0.2.20.zip
+
+di folder openblas
+edit Makefile.rule
+uncomment:
+	BINARY=64
+	INTERFACE64=1
+
+	make
+	sudo make install
+
+di lokasi octave
+	./configure JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 LD_LIBRARY_PATH=/opt/OpenBLAS/lib CPPFLAGS=-I/opt/OpenBLAS/include LDFLAGS=-L/opt/OpenBLAS/lib --enable-64
+	make
+	sudo make install
+
+
+jika muncul error berikut:
+	octave-cli: error while loading shared libraries: libopenblas.so.0: cannot open shared object file: No such file or directory
+
+solusinya:
+	sudo apt-get install libopenblas-base
+
+
+octave –force-gui
+kemudian set to launcher
+
+jika muncul error ketika menjalankan command diatas, solusinya adalah ganti owner dari root menjadi user
+	sudo chown -R user:user /home/username/.config/octave/
+
+jika ctrl+c menyebabkan crash, lakukan ini di terminal:
+	export OMP_NUM_THREADS=1
