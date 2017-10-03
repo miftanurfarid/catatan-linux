@@ -1,0 +1,83 @@
+USING INTEL MKL IN GNU OCTAVE
+
+SOURCE:https://software.intel.com/en-us/articles/using-intel-mkl-in-gnu-octave
+
+Link/Build Latest Octave with latest MKL
+
+The latest released version of Octave like Octave 4.0.3 haven't provided the same configuration like no option in configure.in.  Developer can still build the Octave with latest MKL version as below
+
+Install parallel_studio_xe_2017_composer_edition,which include Intel C compiler, Intel Fortran compiler and Intel MKL.
+Download free as student (register first): https://software.intel.com/en-us/parallel-studio-xe/choose-download/student-linux-fortran
+mine: parallel_studio_xe_2018_cluster_edition.tgz
+>cli<
+tar xvzf parallel_studio_xe_2018_cluster_edition.tgz
+cd parallel_studio_xe_2018_cluster_edition
+sudo -s (login as root)
+./install.sh (cli) or ./install_GUI.sh (gui)
+>cli<
+follow instruction for installation. Type the serial number that you get after register as student by email. For activation need internet connection without proxy (I'm using proxy with authentication, failed!)
+Missing optional prerequisites
+-- 32-bit libraries not found
+????
+You should keep your system free from 32-bit software. 32-bit is on the way out and never to come back. Get used to 64-bit. If possible ignore 32-bit software. Now that my opinion is out here ...
+
+go to octave source. pay attention to java version (/usr/lib/jvm/java-8-openjdk-amd64)
+>cli<
+source /opt/intel/compilers_and_libraries/linux/bin/compilervars.sh intel64
+export CC=icc
+export CXX=icc
+export F77=ifort
+export CFLAGS="-O3 -ipo- -std=c99 -fPIC -DMKL_LP64 -DM_PI=3.1415926535897932384"
+export CPPFLAGS="-I$MKLROOT/include -I$MKLROOT/include/fftw"
+export LDFLAGS="-L$MKLROOT/lib/intel64 -L$MKLROOT/../compiler/lib/intel64"
+export LD_LIBRARY_PATH="$MKLROOT/lib/intel64:$MKLROOT/../compiler/lib/intel64:$LD_LIBRARY_PATH"
+./configure JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 --sysconfdir=/etc --with-blas="-Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -liomp5 -lpthread -lm" --with-lapack="-Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -liomp5 -lpthread -lm" --with-fftw3="-Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -liomp5 -lpthread -lm" --with-fftw3f="-Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -liomp5 -lpthread -lm" --enable-fortran-calling-convention=gfortran
+make -j 2
+>cli<
+>>>>
+make failed
+http://ab-initio.mit.edu/octave-Faddeeva/gnulib/lib/mktime.c
+http://ab-initio.mit.edu/octave-Faddeeva/gnulib/lib/glob.c
+>>>>
+FAILED
+IM DONE!
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Here is workaround, which may avoid the step of build with MKL. Could you build Octave by default(exclude MKL) sucessfully or get one ready Octave version installed on your machine?
+
+Then replace  the BLAS, LAPACK and FFT library with Intel MKL library manually. Then the Octave should get benefit from MKL automatically.
+
+https://software.intel.com/en-us/articles/using-intel-mkl-in-gnu-octave
+
+And some developer may see other libraries like  libblas.so.3,  libfftw3_threads.so.3  are listed  by " ldd liboctave/.libs/liboctave.so.3.0.2". If you  hope to use Intel MKL FFTW, BLAS, LAPACK etc,  you may need create the link manually:
+
+sudo mv /usr/lib64/atlas/libtatlas.so.3 /usr/lib64/atlas/libtatlas.so.3.keep
+sudo mv /usr/lib64/atlas/libsatlas.so.3 /usr/lib64/atlas/libsatlas.so.3.keep
+sudo mv /lib64/libblas.so.3    /lib64/libblas.so.3.keep
+sudo mv /lib64/liblapack.so.3 /lib64/liblapack.so.3.keep
+
+sudo mv /lib64/libfftw3_threads.so.3    /lib64/libfftw3_threads.so.3.keep
+sudo mv /lib64/libfftw3.so.3 /lib64/libfftw3.so.3.keep
+
+sudo mv /lib64/libfftw3f_threads.so.3    /lib64/libfftw3f_threads.so.3.keep
+sudo mv /lib64/libfftw3f.so.3 /lib64/libfftw3f.so.3.keep
+
+sudo rm -rf /usr/lib64/atlas/libtatlas.so.3 /usr/lib64/atlas/libsatlas.so.3 /lib64/libblas.so.3 /lib64/liblapack.so.3  /lib64/libfftw3f.so.3 /lib64/libfftw3f_threads.so.3 /lib64/libfftw3_threads.so.3 /lib64/libfftw3_threads.so.3
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /usr/lib64/atlas/libtatlas.so.3
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /usr/lib64/atlas/libsatlas.so.3
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /lib64/libblas.so.3
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /lib64/liblapack.so.3
+
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /lib64/libfftw3.so.3
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /lib64/libfftw3_threads.so.3
+
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /lib64/libfftw3f.so.3
+sudo ln -s /opt/intel/compilers_and_libraries/linux/mkl/lib/intel64/libmkl_rt.so /lib64/libfftw3f_threads.so.3
+
+Best Regards,
+
+Ying
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
