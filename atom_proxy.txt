@@ -1,0 +1,4 @@
+manambahkan proxy dengan authentication pada atom
+
+$ apm config set proxy "http://user:pass@host:port"
+$ apm config set https_proxy "http://user:pass@host:port"
