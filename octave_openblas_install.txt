@@ -20,7 +20,7 @@ uncomment:
 	sudo make install
 
 di lokasi octave
-	./configure JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 LD_LIBRARY_PATH=/opt/OpenBLAS/lib CPPFLAGS=-I/opt/OpenBLAS/include LDFLAGS=-L/opt/OpenBLAS/lib --enable-64
+	./configure JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 LD_LIBRARY_PATH=/opt/OpenBLAS/lib CPPFLAGS=-I/opt/OpenBLAS/include LDFLAGS=-L/opt/OpenBLAS/lib --enable-64
 	make
 	sudo make install
 

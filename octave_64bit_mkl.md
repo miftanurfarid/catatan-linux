@@ -1,5 +1,5 @@
 	
-	git clone https://github.com/siko1056/GNU-Octave-enable-64.git
+	git clone https://github.com/miftanurfarid/GNU-Octave-enable-64.git
 	cd GNU-Octave-enable-64
 
 pastikan versi gcc, g++ dan gfortran sama. jika tidak sama menyebabkan compile failed
@@ -10,9 +10,9 @@ pastikan versi gcc, g++ dan gfortran sama. jika tidak sama menyebabkan compile f
 
 install dgn versi yg sama
 	
-	sudo apt-get install gcc
-	sudo apt-get install g++
-	sudo apt-get install gfortran
+	sudo apt-get install gcc-xxx
+	sudo apt-get install g++-xxx
+	sudo apt-get install gfortran-xxx
 
 symbolic link. pada kasus ini, gfortran saya tidak sama versinya dgn gcc dan g++
 	
@@ -21,7 +21,6 @@ symbolic link. pada kasus ini, gfortran saya tidak sama versinya dgn gcc dan g++
 untuk install openblas library
 	
 	make -j2 openblas
-
 
 untuk install suitesparce library bagi pengguna nVidia. skip jika tidak pakai nVidia. saya pakai radeon, coba install library ini, hasilnya error. [update] saya coba install di pc dgn vga nVidia, tetap gagal.
 	
