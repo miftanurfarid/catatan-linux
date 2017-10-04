@@ -23,7 +23,7 @@ untuk install openblas library
 	make -j2 openblas
 
 
-untuk install suitesparce library untuk pengguna nVidia. skip jika tidak pakai nVidia. saya pakai radeon, coba install library ini, hasilnya error.
+untuk install suitesparce library bagi pengguna nVidia. skip jika tidak pakai nVidia. saya pakai radeon, coba install library ini, hasilnya error. [update] saya coba install di pc dgn vga nVidia, tetap gagal.
 	
 	make -j2 suitesparse
 
