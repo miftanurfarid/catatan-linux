@@ -22,19 +22,19 @@ untuk install openblas library
 untuk install suitesparce library untuk pengguna nVidia. skip jika tidak pakai nVidia. saya pakai radeon, coba install library ini, hasilnya error.
 	make -j2 suitesparse
 
-# untuk install qrupdate library
-make -j2 qrupdate
+untuk install qrupdate library
+	make -j2 qrupdate
 
-# untuk install arpack library
-make -j2 arpack
+untuk install arpack library
+	make -j2 arpack
 
-# untuk install octave
-make -j2 octave
+untuk install octave
+	make -j2 octave
 
 Hasil benchmark dengan linpack:
 
 
-# Download intel math kernel library (intel mkl)
-# pilih student atau educator untuk free
-https://software.intel.com/en-us/parallel-studio-xe/choose-download
+Download intel math kernel library (intel mkl)
+pilih student atau educator untuk free
+	https://software.intel.com/en-us/parallel-studio-xe/choose-download
 
