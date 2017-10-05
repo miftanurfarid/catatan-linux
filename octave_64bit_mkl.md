@@ -1,3 +1,9 @@
+versi asli :
+
+	git clone https://github.com/siko1056/GNU-Octave-enable-64/
+	cd GNU-Octave-enable-64
+
+punya saya: `suitesparce` dihapus, tambah `java`
 	
 	git clone https://github.com/miftanurfarid/GNU-Octave-enable-64.git
 	cd GNU-Octave-enable-64
@@ -18,28 +24,11 @@ symbolic link. pada kasus ini, gfortran saya tidak sama versinya dgn gcc dan g++
 	
 	sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-4.8 50
 
-untuk install openblas library
+untuk install semua library
 	
-	make -j2 openblas
-
-untuk install suitesparce library bagi pengguna nVidia. skip jika tidak pakai nVidia. saya pakai radeon, coba install library ini, hasilnya error. [update] saya coba install di pc dgn vga nVidia, tetap gagal.
-	
-	make -j2 suitesparse
-
-untuk install qrupdate library
-	
-	make -j2 qrupdate
-
-untuk install arpack library
-	
-	make -j2 arpack
-
-untuk install octave
-	
-	make -j2 octave
+	make -j4 
 
 Hasil benchmark dengan linpack:
-
 
 Download intel math kernel library (intel mkl)
 pilih student atau educator untuk free
