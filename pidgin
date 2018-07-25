@@ -1,0 +1,17 @@
+##################################################
+tambah protocol whatsapp di pidgin
+
+1) download dari git:
+
+https://github.com/davidgfnet/whatsapp-purple
+
+2) make ARCH=x86_64
+3) sudo make install
+
+
+##################################################
+tambah protocol line di pidgin
+
+1) sudo pacman -S base-devel
+2) curl -O http://altrepo.eu/git/arch.altrepo.eu/raw/master/purple-line/PKGBUILD
+3) makepkg -cis
