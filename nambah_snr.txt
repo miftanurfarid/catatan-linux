@@ -1,4 +1,0 @@
-snr0 = round(10*log10(sum(t.^2)/sum(m.^2))); %initial snr
-alpha = sqrt(sum(t.^2)/(sum(m.^2)*10^(sir/10)));
-snr1 = round(10*log10(sum(t.^2)/sum((alpha.*m).*(alpha.*m)))); %snr now
-m = alpha*m;
