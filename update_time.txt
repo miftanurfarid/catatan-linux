@@ -2,3 +2,4 @@ sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -
 
 sudo ntpdate time.nist.gov
 
+timedatectl set-timezone Asia/Makassar
