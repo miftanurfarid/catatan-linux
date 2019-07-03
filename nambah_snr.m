@@ -14,7 +14,7 @@ if fss ~= fs
 end
 
 if fsn ~= fs
-	ns = resample(ns, fs, fss);
+	ns = resample(ns, fs, fsn);
 end
 
 % menyamakan panjang file
@@ -26,12 +26,12 @@ end
 
 % make zero snr
 snr0 = 0;
-alpha0 = sqrt(sum(sig.^2)/(sum(ns.^2)*10^(snr0/10)));
+alpha0 = sqrt(sum(sig.^2) / (sum(ns.^2) * 10^(snr0/10)));
 m = alpha0*m;
 
 % make zero snr
 snr1 = 0 - snr0;
-alpha1 = sqrt(sum(t.^2)/(sum(m.^2)*10^(sir/10)));
+alpha1 = sqrt(sum(sig.^2)/(sum(ns.^2)*10^(snr1/10)));
 
 alpha = sqrt(sum(t.^2)/(sum(m.^2)*10^(sir/10)));
 snr1 = round(10*log10(sum(t.^2)/sum((alpha.*m).*(alpha.*m)))); %snr now
